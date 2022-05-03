@@ -171,7 +171,33 @@ Project Info
                         return false; // stops
                     }
                 }
-            }
+            },
+            {
+                type: 'input',
+                name: 'contributing',
+                message: 'How to contribute to this project?',
+                validate: contributingInput => {
+                    if(contributingInput) {
+                        return true;
+                    } else {
+                        console.log('Please include information on how-to contribute.')
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'tests',
+                message: 'Provide a test example.',
+                validate: testsInput => {
+                    if (testsInput) {
+                        return true;
+                    } else {
+                        console.log('Please include test examples in your application.');
+                        return false;
+                    }
+                }
+            },
         ])
         .then((readmeData) => {
             const finalData = Object.assign(userData, readmeData);

@@ -1,16 +1,22 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+
+}
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(typeOfLicense, userName) {
   if (typeOfLicense === 'MIT') {
-    return `MIT License
+    return `
+    ![MIT License](https://img.shields.io/badge/License-MIT-green)
+    MIT License
     Copyright (c) ${new Date().getFullYear()} ${userName}
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
@@ -29,8 +35,9 @@ function renderLicenseSection(typeOfLicense, userName) {
     SOFTWARE.
     `
   }
-  else if (typeOfLicense === 'Apache 2.0') {
+  else if (typeOfLicense === 'APACHE 2.0') {
     return `
+    ![Apache License](https://img.shields.io/badge/License-Apache%202.0-blue)
     Apache License
 Version 2.0, January 2004
 http://www.apache.org/licenses/
@@ -208,23 +215,52 @@ limitations under the License.
 function generateMarkdown(recieveUserInput) {
   /* console.log(recieveUserInput, 'THIS DATA NEEDS TO BE DESTRUCTURED'); */
 
-  const {title, description, installation, usage, license, ...user} = recieveUserInput;
+  const {title, description, installation, usage, license, name, ...user} = recieveUserInput;
 
 return `
-This is my license ${renderLicenseSection(license, user.name)}
-This is my TITLE: ${title}
-This is my DESCRIPTION: ${description}
-This is my INSTALLATION: ${installation}
-This is my USAGE: ${usage}
+# ${title}
 
-This is my ${user.name}
-This is my ${user.occupation}
-This is my ${user.email}
-This is my ${user.github}
+## Description
+${description}
 
-This is ${license}
+## Table of Contents
+- [Title](#${title.toLowerCase()})
+- [Description](#description)
+- [Table of Contents](#table-of-contents)
+- [Installation] (#installation)
+- [Usage] (#usage)
+- [License] (#license)
+- [Contributing] (#contributing)
+- [Tests] (#tests)
+- [Questions] (#questions)
 
-NAME, occupation, email, github, license, TechConfirm
+
+
+License ${renderLicenseSection(license, user.name)}
+
+#TITLE: ${title}
+
+## DESCRIPTION: ${description}
+
+## INSTALLATION: ${installation}
+
+## USAGE: ${usage}
+
+## LICENSE ${license}
+
+## CONTRIBUTING
+
+## TESTS
+
+## QUESTIONS: 
+PLEASE CONTACT ${user.github} 
+
+Name: ${user.name}
+Occpation: ${user.occupation}
+E-mail: ${user.email}
+GitHub: ${user.github}
+
+${license}
 
 `;
 
