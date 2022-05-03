@@ -1,11 +1,11 @@
 
-# stnya 
+# README generator
 
 ## Description
-sgny
+It generates README's
 
 ## Table of Contents
-- [Title](stnya )
+- [Title](readme generator)
 - [Description](#description)
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
@@ -190,29 +190,29 @@ See the License for the specific language governing permissions and
 limitations under the License.
     
 
-# TITLE: stnya 
+# TITLE: README generator
 
-## Description: sgny
+## Description: It generates README's
 
 ## Table of Contents: 
 
-## Installation: sthy
+## Installation: computer
 
-## Usage: sthn
+## Usage: with your computer
 
 ## License: APACHE 2.0
 
-## Contributing: stfh
+## Contributing: with great ideas
 
-## Tests: stfg
+## Tests: ok
 
 ## Questions: 
-PLEASE CONTACT aeftb |
+PLEASE CONTACT adrianapvent |
 
 Name: undefined |
-Occpation: okaerh |
-E-mail: aefn |
-GitHub: aeftb |
+Occpation: Web developer |
+E-mail: adriana.e.oena@gmail.com |
+GitHub: adrianapvent |
 
 APACHE 2.0
 
