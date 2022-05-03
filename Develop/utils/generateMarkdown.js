@@ -224,15 +224,15 @@ return `
 ${description}
 
 ## Table of Contents
-- [Title](#${title.toLowerCase()})
+- [Title](${title.toLowerCase()})
 - [Description](#description)
 - [Table of Contents](#table-of-contents)
-- [Installation] (#installation)
-- [Usage] (#usage)
-- [License] (#license)
-- [Contributing] (#contributing)
-- [Tests] (#tests)
-- [Questions] (#questions)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
 
 
@@ -240,20 +240,22 @@ License ${renderLicenseSection(license, user.name)}
 
 # TITLE: ${title}
 
-## DESCRIPTION: ${description}
+## Description: ${description}
 
-## INSTALLATION: ${installation}
+## Table of Contents: 
 
-## USAGE: ${usage}
+## Installation: ${installation}
 
-## LICENSE ${license}
+## Usage: ${usage}
 
-## CONTRIBUTING ${contributing}
+## License: ${license}
 
-## TESTS ${tests}
+## Contributing: ${contributing}
 
-## QUESTIONS: 
-PLEASE CONTACT ${user.github} 
+## Tests: ${tests}
+
+## Questions: 
+PLEASE CONTACT ${user.github} |
 
 Name: ${user.name} |
 Occpation: ${user.occupation} |
