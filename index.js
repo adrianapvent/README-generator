@@ -1,6 +1,9 @@
 // TODO: Include packages needed for this application
 /* const fs = require('fs'); */ // include File System
+const fs = require('fs');
 const inquirer = require('inquirer'); // include inquirer
+const generateMarkdown = require('./Develop/utils/generateMarkdown.js');
+
 /* const generateMarkdown = require('./src/md-template'); */ // include md-template
 
 // TODO: Create an array of questions for user input
@@ -162,7 +165,7 @@ Project Info
                 message: "How do you use the application?",
                 validate: usageInput => {
                     if (usageInput) {
-                        return true;
+                        return true; // stops
                     } else {
                         console.log('This is above the RETURN');
                         return false; // stops
@@ -172,13 +175,22 @@ Project Info
         ])
         .then((readmeData) => {
             const finalData = Object.assign(userData, readmeData);
-            /* console.log(finalData); */
+            
             return finalData;
         });
 }
 
 userQuestions()
-    .then(promptProjectQ);
+    .then(promptProjectQ) // == finalData 
+    .then(userInput => {// finalData is sent here
+        const sendMarkdownTemplate = generateMarkdown(userInput);
+
+        fs.writeFile('./dist/README.md', sendMarkdownTemplate, (err) => {
+            if (err) throw new Error(err);
+        });
+    });
+
+
 
 /* // TODO: Create a function to initialize app
 function init() {}
