@@ -215,7 +215,7 @@ limitations under the License.
 function generateMarkdown(recieveUserInput) {
   /* console.log(recieveUserInput, 'THIS DATA NEEDS TO BE DESTRUCTURED'); */
 
-  const {title, description, installation, usage, license, name, ...user} = recieveUserInput;
+  const {title, description, installation, usage, contributing, tests, license, name, ...user} = recieveUserInput;
 
 return `
 # ${title}
@@ -238,7 +238,7 @@ ${description}
 
 License ${renderLicenseSection(license, user.name)}
 
-#TITLE: ${title}
+# TITLE: ${title}
 
 ## DESCRIPTION: ${description}
 
@@ -248,17 +248,17 @@ License ${renderLicenseSection(license, user.name)}
 
 ## LICENSE ${license}
 
-## CONTRIBUTING
+## CONTRIBUTING ${contributing}
 
-## TESTS
+## TESTS ${tests}
 
 ## QUESTIONS: 
 PLEASE CONTACT ${user.github} 
 
-Name: ${user.name}
-Occpation: ${user.occupation}
-E-mail: ${user.email}
-GitHub: ${user.github}
+Name: ${user.name} |
+Occpation: ${user.occupation} |
+E-mail: ${user.email} |
+GitHub: ${user.github} |
 
 ${license}
 
